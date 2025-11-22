@@ -38,6 +38,7 @@ body {
     --text-soft: #6b7280;
     --radius-large: 28px;
     --radius-card: 18px;
+    --button-blue: #1c84ff; /* Specific variable for buttons */
 }
 
 /* Dark mode overrides */
@@ -248,8 +249,11 @@ body.dark-mode .nav-button.active { color: #ffffff; }
     color: var(--text-main);
     border-radius: 18px;
     box-shadow: none;
-    padding: 1rem;
+    padding: 0.8rem 1rem; /* Reduced padding */
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 body.dark-mode .card-header { background: rgba(15, 23, 42, 0.5); color: #fff; }
 
@@ -260,22 +264,25 @@ body.dark-mode .card-header { background: rgba(15, 23, 42, 0.5); color: #fff; }
 
 .card-body {
     display: none; /* Completely hidden until toggled */
-    padding: 1rem;
+    padding: 0.75rem 1rem; /* Reduced padding */
     border-top: 1px solid var(--card-border);
     background: #f8fafc;
     font-size: 0.85rem;
 }
 .card-body.open { display: block; }
 
+/* FIXED OPEN BUTTON VISIBILITY */
 .open-btn {
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
-    background: var(--accent-blue);
-    color: white;
+    background-color: #1c84ff !important; /* Forced Blue */
+    color: #ffffff !important; /* Forced White Text */
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(28, 132, 255, 0.3);
 }
 
 /* =========================================
