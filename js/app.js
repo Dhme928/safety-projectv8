@@ -862,10 +862,10 @@ function setupLibrarySwitcher() {
 
   function classifyHeatRisk(heatIndexC) {
     if (heatIndexC == null || isNaN(heatIndexC)) return { label: '--', level: 'unknown' };
-    if (heatIndexC < 27) return { label: 'Safe', level: 'safe' };
-    if (heatIndexC < 32) return { label: 'Caution', level: 'caution' };
-    if (heatIndexC < 41) return { label: 'Extreme Caution', level: 'warning' };
-    if (heatIndexC < 54) return { label: 'Danger', level: 'danger' };
+    if (heatIndexC < 29) return { label: 'Safe', level: 'safe' };
+    if (heatIndexC < 29) return { label: 'Caution', level: 'caution' };
+    if (heatIndexC < 38) return { label: 'Extreme Caution', level: 'warning' };
+    if (heatIndexC < 51) return { label: 'Danger', level: 'danger' };
     return { label: 'Extreme Danger', level: 'extreme' };
   }
 
@@ -973,10 +973,10 @@ function calculateHeatIndex() {
       tagBg = 'rgba(15,23,42,0.3)';
       tagColor = '#ffffff';
       details = {
-        symptoms: 'Comfortable to warm. Mild fatigue or heat cramps possible.',
-        workRest: 'Normal work for acclimatized workers. Encourage short breaks in shade.',
-        water: '250–500 ml every 20–30 minutes.',
-        controls: 'Ensure water and shade, use buddy system, brief workers on early heat symptoms.'
+        symptoms: 'Fatigue possible with prolonged exposure and/or physical activity.',
+        workRest: 'Normal/Scheduled.',
+        water: '1 cup (250ml) every 20 minutes.',
+        controls: 'Visual monitorings workers in in direct sun and heavy work.'
       };
       break;
 
@@ -986,10 +986,10 @@ function calculateHeatIndex() {
       tagBg = 'rgba(15,23,42,0.4)';
       tagColor = '#ffffff';
       details = {
-        symptoms: 'Headache, weakness, nausea, possible heat exhaustion.',
-        workRest: 'Plan work/rest cycles, especially for heavy work and new workers.',
-        water: 'At least 500 ml every 20 minutes.',
-        controls: 'Increase supervision, enforce shaded breaks, shift heavy tasks to cooler hours.'
+        symptoms: 'Heat cramps, heat, exhaustion, or heat stroke likely with prolonged exposure and physical activity',
+        workRest: '50:10.',
+        water: '1 cup (250ml) every 20 minutes.',
+        controls: 'No working alone (buddy system).'
       };
       break;
 
@@ -999,10 +999,10 @@ function calculateHeatIndex() {
       tagBg = 'rgba(15,23,42,0.45)';
       tagColor = '#ffffff';
       details = {
-        symptoms: 'Dizziness, confusion, heat exhaustion likely if unprotected.',
-        workRest: 'Reduce heavy work; short work/rest (e.g. 30/30 min) per site GI.',
-        water: '500–750 ml every 15–20 minutes.',
-        controls: 'Dedicated heat-stress watch, cooling areas, limit non-essential outdoor tasks.'
+        symptoms: 'Heat cramps, heat, exhaustion, or heat stroke likely with prolonged exposure and physical activity',
+        workRest: '30:10',
+        water: '1 cup (250ml) every 15 minutes.',
+        controls: 'Work unnder shade.'
       };
       break;
 
@@ -1013,9 +1013,9 @@ function calculateHeatIndex() {
       tagColor = '#ffffff';
       details = {
         symptoms: 'Collapse, loss of consciousness, heat stroke possible.',
-        workRest: 'Stop non-essential outdoor work. Only life-saving work with management approval.',
-        water: '500–1000 ml plus immediate medical evaluation for any symptoms.',
-        controls: 'Activate emergency response, rapid cooling, follow site heat-stress / GI procedure.'
+        workRest: '20:10.',
+        water: '1 cup (250ml) every 10 minutes.',
+        controls: '<li>Assess the risks of working in direct sunlight for an extended period of time, and determine if the work should continue.</li><li>Use engineering controls such as shade and ventilation/ cooling systems for work activities that involve increased risk.</li><li>Seek immediate medical attention for workers exhibiting symptoms of serious heat-related illness.</li><li>Establish and maintain break periods during work activities.</li><li>Drink one cup of water every 10 minutes using a personal water bottle/insulated container (2-liter capacity).</li><li>Do not work alone (i.e., isolated).</li><li>Take extra precautions when flame resistant clothing is required, as such fabrics can intensify heat stress.</li><li>Do not wear fabrics that may increase heat stress (e.g., polyester, nylon).</li>.'
       };
       break;
 
