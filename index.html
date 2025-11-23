@@ -4,28 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
+    <!-- Icons & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet"
+    />
 
-    <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1pT2_mI_B9CrnOde6YK__OzBd2gYEppXy" />
+    <!-- App Icon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://drive.google.com/uc?export=view&id=1pT2_mI_B9CrnOde6YK__OzBd2gYEppXy"
+    />
 
     <title>My Observations App 👷🏻‍♂️</title>
 
+    <!-- Main styles -->
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="light-mode">
 <div class="app-container">
 
+    <!-- HEADER -->
     <header class="app-header">
         <div class="header-title-area">
-            <h1>My Observations App 👷🏻‍♂️</h1>
-            <p class="header-subtitle">Daily safety cockpit</p>
+            <img
+                src="img/CAT.jpeg"
+                alt="Safety Group Logo"
+                class="header-logo"
+            />
+            <div class="header-text">
+                <h1>My Observations App</h1>
+                <p class="header-subtitle">Daily safety cockpit</p>
+            </div>
         </div>
         <button class="mode-toggle" type="button" aria-label="Toggle dark mode">
             <i id="modeIcon" class="fas fa-moon"></i>
         </button>
     </header>
 
+    <!-- LEADERBOARD MODAL -->
     <div id="leaderboardModal" class="modal">
         <div class="modal-content">
             <button class="close-btn" type="button" onclick="hideLeaderboardModal()">
@@ -40,6 +59,7 @@
         </div>
     </div>
 
+    <!-- EMERGENCY CONTACTS MODAL -->
     <div id="emergencyContactsModal" class="modal">
         <div class="modal-content">
             <button class="close-btn" type="button" onclick="hideEmergencyContactsModal()">
@@ -78,7 +98,7 @@
                     <tr><td>Dr. Ahmed Hussein</td><td>CAT Doctor</td><td><a href="tel:0562535421">056 253 5421</a></td></tr>
                     <tr><td>Romelle M. Pagayon</td><td>Male Nurse</td><td><a href="tel:0531551924">053 155 1924</a></td></tr>
                     <tr><td>Joe Franco V. Yabut</td><td>CAT First aider</td><td><a href="tel:0506735217">050 673 5217</a></td></tr>
-                    <tr><td>Shahid Bhatti</td><td>Ambulance Driver</td><td><a href="tel:0593886520">059 388 6520</a></td></tr>
+                    <tr><td>Shahid Bhatti</td><td>Ambulance Driver</td><td><a href="tel:0593886520">059 3886520</a></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -105,8 +125,10 @@
         </div>
     </div>
 
+    <!-- MAIN CONTENT -->
     <main class="content-area">
 
+        <!-- HOME TAB -->
         <section id="HomeTab" class="tab-content active">
             <div class="home-kpi-row">
                 <div class="home-kpi-card">
@@ -164,7 +186,7 @@
             </section>
 
             <p class="month-color-line">
-                The Color Code of This Month is:
+                <span class="month-color-label">The Color Code of This Month is:</span>
                 <span id="colorName">...</span>
             </p>
 
@@ -175,24 +197,19 @@
                 <div id="employeeOfMonth">Loading...</div>
             </section>
 
-            <button class="accordion">
+            <button
+                class="accordion accordion-modal"
+                type="button"
+                onclick="showLeaderboardModal()">
                 <i class="fas fa-trophy"></i> Monthly Leaderboard
             </button>
-            <div class="panel">
-                <p>Use the button above to view full monthly leaderboard.</p>
-            </div>
 
-            <button class="accordion">
-                <i class="fas fa-ambulance"></i> EMERGENCY CONTACTS
+            <button
+                class="accordion accordion-modal"
+                type="button"
+                onclick="showEmergencyContactsModal()">
+                <i class="fas fa-ambulance"></i> Emergency Contacts
             </button>
-            <div class="panel">
-                <p>
-                    Tap the red ambulance button or
-                    <button type="button" class="link-button inline" onclick="showEmergencyContactsModal()">
-                        open full list
-                    </button>.
-                </p>
-            </div>
 
             <button class="accordion">
                 <i class="fas fa-exclamation-triangle"></i> EMERGENCY REPORTING PROCEDURES
@@ -245,12 +262,6 @@
             </div>
 
             <button class="accordion">
-                <i class="fas fa-book-open"></i> Full TBT Details
-            </button>
-            <div class="panel" id="tbtPanel">
-                </div>
-
-            <button class="accordion">
                 <i class="fas fa-link"></i> Useful Links
             </button>
             <div class="panel">
@@ -269,6 +280,7 @@
             </div>
         </section>
 
+        <!-- OBSERVATIONS TAB -->
         <section id="ObservationsTab" class="tab-content">
             <div class="obs-summary-bar">
                 <div class="obs-summary-item">
@@ -324,27 +336,69 @@
             </div>
         </section>
 
+        <!-- TASKS TAB -->
         <section id="TasksTab" class="tab-content">
-            <iframe id="tasksIframe" title="Daily tasks form" frameborder="0" marginheight="0" marginwidth="0">
+            <iframe
+                id="tasksIframe"
+                title="Daily tasks form"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+            >
                 Loading…
             </iframe>
         </section>
 
+        <!-- LIBRARY TAB (chooser + content) -->
         <section id="JSATab" class="tab-content">
-            <div class="library-layout">
-                <div class="library-column">
-                    <h3><i class="fas fa-file-alt"></i> JSA Library</h3>
-                    <input type="text" id="jsaSearch" placeholder="Search JSA titles (e.g., scaffolding, lifting)..." />
-                    <div id="jsaListContainer"></div>
+
+            <!-- First view: chooser with two big blocks -->
+            <div id="libraryChooser" class="library-chooser">
+                <div class="library-choice-card library-card" data-library="jsa">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Job Safety Analysis Library</h3>
+                    <p>Browse JSA documents for key activities.</p>
+                </div>
+                <div class="library-choice-card library-card" data-library="tbt">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Tool Box Talk Library</h3>
+                    <p>Browse TBTs for daily safety briefings.</p>
+                </div>
+            </div>
+
+            <!-- Second view: actual library (JSA or TBT) -->
+            <div id="libraryContent" class="library-content" style="display: none;">
+                <button id="libraryBackButton" type="button" class="library-back">
+                    <i class="fas fa-arrow-left"></i> Back to library menu
+                </button>
+
+                <h2 id="libraryTitle" class="library-title">
+                    Library
+                </h2>
+
+                <!-- JSA search bar -->
+                <div id="libraryJsaSearchWrapper" class="library-search" style="display: none;">
+                    <input
+                        type="text"
+                        id="jsaSearch"
+                        placeholder="Search JSA titles (e.g., scaffolding, lifting)..." />
                 </div>
 
-                <div class="library-column">
-                    <h3><i class="fas fa-book-open"></i> TBT Library</h3>
-                    <div id="tbtLibraryList"></div>
+                <!-- TBT search bar -->
+                <div id="libraryTbtSearchWrapper" class="library-search" style="display: none;">
+                    <input
+                        type="text"
+                        id="tbtSearch"
+                        placeholder="Search TBT titles (e.g., PPE, lifting)..." />
                 </div>
+
+                <!-- Lists filled by app.js -->
+                <div id="jsaListContainer" class="library-list" style="display: none;"></div>
+                <div id="tbtLibraryList" class="library-list" style="display: none;"></div>
             </div>
         </section>
 
+        <!-- TOOLS TAB -->
         <section id="ToolsTab" class="tab-content">
             <div class="tool-toggle-container">
                 <button class="tool-toggle-btn active-tool" type="button" data-tool="kpi">
@@ -358,7 +412,8 @@
                 </button>
             </div>
 
-            <section id="kpiSection">
+            <!-- KPI CARD -->
+            <section id="kpiSection" class="home-card tools-card">
                 <div class="tools-section-header">
                     <i class="fas fa-calculator"></i>
                     <div>
@@ -371,7 +426,8 @@
                 </p>
             </section>
 
-            <section id="heatStressSection" style="display: none;">
+            <!-- HEAT STRESS CARD -->
+            <section id="heatStressSection" class="home-card tools-card" style="display: none;">
                 <div class="tools-section-header heat">
                     <i class="fas fa-sun"></i>
                     <div>
@@ -383,11 +439,23 @@
                 <div class="kpi-card">
                     <div class="kpi-input-group">
                         <label>Air Temperature (°C)</label>
-                        <input type="number" id="inputTemp" class="kpi-input-field" placeholder="e.g., 35" oninput="calculateHeatIndex()" />
+                        <input
+                            type="number"
+                            id="inputTemp"
+                            class="kpi-input-field"
+                            placeholder="e.g., 35"
+                            oninput="calculateHeatIndex()"
+                        />
                     </div>
                     <div class="kpi-input-group">
                         <label>Relative Humidity (%)</label>
-                        <input type="number" id="inputHumidity" class="kpi-input-field" placeholder="e.g., 40" oninput="calculateHeatIndex()" />
+                        <input
+                            type="number"
+                            id="inputHumidity"
+                            class="kpi-input-field"
+                            placeholder="e.g., 40"
+                            oninput="calculateHeatIndex()"
+                        />
                     </div>
                 </div>
 
@@ -401,7 +469,8 @@
                 </div>
             </section>
 
-            <section id="windSpeedSection" style="display: none;">
+            <!-- WIND SPEED CARD -->
+            <section id="windSpeedSection" class="home-card tools-card" style="display: none;">
                 <div class="tools-section-header wind">
                     <i class="fas fa-wind"></i>
                     <div>
@@ -413,7 +482,13 @@
                 <div class="kpi-card">
                     <div class="kpi-input-group">
                         <label>Current Wind Speed (km/h)</label>
-                        <input type="number" id="inputWind" class="kpi-input-field" placeholder="e.g., 25" oninput="calculateWindSafety()" />
+                        <input
+                            type="number"
+                            id="inputWind"
+                            class="kpi-input-field"
+                            placeholder="e.g., 25"
+                            oninput="calculateWindSafety()"
+                        />
                     </div>
                 </div>
 
@@ -428,6 +503,7 @@
             </section>
         </section>
 
+        <!-- NEWS TAB -->
         <section id="NewsTab" class="tab-content">
             <div id="AnnouncementsContainer">
                 <div id="newsLoading" class="loading-spinner">
@@ -436,16 +512,39 @@
             </div>
         </section>
 
+        <!-- 🔍 Observation detail modal -->
+        <div id="observationDetailModal" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" type="button" onclick="hideObservationDetailModal()">
+                    &times;
+                </button>
+                <h2>Observation Details</h2>
+                <div id="observationDetailBody"></div>
+            </div>
+        </div>
+
     </main>
 
-    <a id="addObservationButton" class="add-observation-btn" href="#" target="_blank">
+    <!-- FLOATING BUTTONS -->
+    <a
+        id="addObservationButton"
+        class="add-observation-btn"
+        href="#"
+        target="_blank"
+    >
         <i class="fas fa-plus"></i> Add New Observation
     </a>
 
-    <button id="emergencyQuickButton" type="button" title="Emergency Contacts" onclick="showEmergencyContactsModal()">
+    <button
+        id="emergencyQuickButton"
+        type="button"
+        title="Emergency Contacts"
+        onclick="showEmergencyContactsModal()"
+    >
         <i class="fas fa-ambulance"></i>
     </button>
 
+    <!-- NAV BAR -->
     <nav class="nav-bar" role="tablist">
         <button class="nav-button active" type="button" data-tab="HomeTab" aria-selected="true">
             <span class="nav-icon"><i class="fas fa-house"></i></span>
@@ -474,6 +573,7 @@
     </nav>
 </div>
 
+<!-- SCRIPTS -->
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>
 </body>
