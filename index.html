@@ -363,6 +363,12 @@
                     <h3>Tool Box Talk Library</h3>
                     <p>Browse TBTs for daily safety briefings.</p>
                 </div>
+<div class="library-choice-card library-card" data-library="csm">
+  <i class="fas fa-hard-hat"></i>
+  <h3>Construction Safety Manual (CSM)</h3>
+  <p>Browse CSM chapters, guidelines & procedures.</p>
+</div>
+
             </div>
 
             <!-- Second view: actual library (JSA or TBT) -->
@@ -385,6 +391,7 @@
 
                 <!-- TBT search bar -->
                 <div id="libraryTbtSearchWrapper" class="library-search" style="display: none;">
+
                     <input
                         type="text"
                         id="tbtSearch"
@@ -393,7 +400,16 @@
 
                 <!-- Lists filled by app.js -->
                 <div id="jsaListContainer" class="library-list" style="display: none;"></div>
-                <div id="tbtLibraryList" class="library-list" style="display: none;"></div>
+                
+
+<!-- CSM search bar -->
+<div id="libraryCsmSearchWrapper" class="library-search" style="display: none;">
+  <input type="text" id="csmSearch" placeholder="Search CSM titles (e.g., lifting, excavation, PPE)..." />
+</div>
+<div id="tbtLibraryList" class="library-list" style="display: none;"></div>
+<!-- CSM list -->
+<div id="csmLibraryList" class="library-list" style="display: none;"></div>
+
             </div>
         </section>
 
