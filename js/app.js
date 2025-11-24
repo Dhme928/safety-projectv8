@@ -542,7 +542,60 @@ async function loadEomAndLeaderboard() {
     }
   }
 
-  // ---- Library cards (JSA & TBT) ----
+  
+// =========================================
+// CSM LIBRARY
+// =========================================
+// Initialize if not defined; items are { title: string, link: string }
+window.csmData = window.csmData || [];
+
+window.csmData = [
+  { title: "CSM - index - الفهرس", link: "https://drive.google.com/file/d/1EUTfno4FZtL0uyrCr28KY5vAR--h8QuZ/view?usp=drivesdk" },
+  { title: "CSM - Contractor Safety Administrative Requirements", link: "https://drive.google.com/file/d/14P2Yjmp2w54R2m1yOAOVKjv1auRpMmND/view?usp=drive_link" },
+  { title: "CSM I-1 Emergency Reporting and Response", link: "https://drive.google.com/file/d/1z8karx9RyNKORpVE7UJkDwVus4vz2UPf/view?usp=drive_link" },
+  { title: "CSM I-2 Incident Reporting and Investigation", link: "https://drive.google.com/file/d/1KwbXosNd5DwpLZ8MYWb8UUuEdWeh7NfX/view?usp=drive_link" },
+  { title: "CSM I-3 Personal Protective Equipment (PPE)", link: "https://drive.google.com/file/d/152cfH1EqdIrk5_V9pcwzj8djl3O6-yJJ/view?usp=drive_link" },
+  { title: "CSM I-4 Work Permit System and Stop Work Authority", link: "https://drive.google.com/file/d/1Qz8e2vnXC58XxUKJxSaqG2s-jza3sSz3/view?usp=drive_link" },
+  { title: "CSM 1-5 Isolation, Lockout and Use of Hold Tags", link: "https://drive.google.com/file/d/1J_klce7pdbNA3cvaiP7QIOZJJFEDazlx/view?usp=drive_link" },
+  { title: "CSM I-6 Confined Spaces", link: "https://drive.google.com/file/d/1ggwNBBuMJRpXAggc_pGCRHJP3jPhdB5Y/view?usp=drive_link" },
+  { title: "CSM I-7 Fire Prevention", link: "https://drive.google.com/file/d/1qlOm6lfqblv_gpH0EReezkEs6EYDoted/view?usp=drivesdk" },
+  { title: "CSM I-8 Traffic and Vehicle Safety ", link: "https://drive.google.com/file/d/1PQ7sg8sQntHro3Zgs49bopnsBjHz3hBy/view?usp=drivesdk" },
+  { title: "CSM I-9 Compressed Gas Cylinders", link: "https://drive.google.com/file/d/1nMbZr89lnGwXoQ4LysxRxri-LlFyWY9K/view?usp=drivesdk" }, 
+  { title: "CSM I-10 Hazardous Materials", link: "https://drive.google.com/file/d/1VvcaqQrzivHC5KLRUn3nfFAGlfUZMj0F/view?usp=drivesdk" },
+  { title: "CSM I-11 Hand Tools and Power Tools", link: "https://drive.google.com/file/d/1ZMS7gxHaKwPmDj3BXec6SYZ0Ljcy0Ggk/view?usp=drivesdk" },
+  { title: "CSM I-12 Materials Handling", link: "https://drive.google.com/file/d/1IpbgrGR0N5K4UBfszVkdtzX00jbZQ6oJ/view?usp=drivesdk" },
+  { title: "CSM I-13 Heat Stress", link: "https://drive.google.com/file/d/1OaA5D8-BYsBL7ZReq96BfJ3_nYbgLaNv/view?usp=drivesdk" }, 
+  { title: "CSM II-1 Excavations and Shoring", link: "https://drive.google.com/file/d/1imul0j3y9ONgLMSwWZ6aETE6xwvjK34L/view?usp=drivesdk" },
+  { title: "CSM II-2 Scaffolding", link: "https://drive.google.com/file/d/1sMWbIwgPp4BO7yNUF-LxrSz1WmNGNeUS/view?usp=drivesdk" },
+  { title: "CSM II-3 Ladders and Stepladders", link: "https://drive.google.com/file/d/1SLRwVCUUjJ6BYeDrMUsZnwHTgOt61ujl/view?usp=drivesdk" },
+  { title: "CSM II-4 Temporary Walking & Working Surfaces", link: "https://drive.google.com/file/d/1IGR51m-92KQ-I0R3zLVxXbeS2nfmcKWH/view?usp=drivesdk" }, 
+  { title: "CSM II-5 Fall Protection", link: "https://drive.google.com/file/d/1uQoZnTHT4VCJkm9SG3zVhW_2Rv-p8vp8/view?usp=drivesdk" },
+  { title: "CSM II-6 Concrete Construction ", link: "https://drive.google.com/file/d/1xdtwzdkP4CXWPWL5m9gmz0w4-pzoqrsM/view?usp=drivesdk" },
+  { title: "CSM II-7 Steel Erection", link: "https://drive.google.com/file/d/1X8dfslDfmJnYBztL7ZRaeWHz3qPBZ7gX/view?usp=drivesdk" },
+  { title: "CSM II-8 Abrasive Blasting", link: "https://drive.google.com/file/d/1qLMljOlgR_EFvnlyWPXmCTt0dCKG4pb6/view?usp=drivesdk" }, 
+  { title: "CSM II-9 Painting and Coating", link: "https://drive.google.com/file/d/1NMm17WJBC_7mcmX6GVtBIMToWIT_Hg9H/view?usp=drivesdk" },
+  { title: "CSM II-10 Cutting, Welding and Brazing ", link: "https://drive.google.com/file/d/1Qj4-Xl5k76FqyeXUT2XdedLbvL7WJ7Rm/view?usp=drivesdk" },
+  { title: "CSM II-11 Road works", link: "https://drive.google.com/file/d/1dbHE3rLRh195UzhfqToiWoqbBdmDAOUP/view?usp=drivesdk" },
+  { title: "CSM II-12 Piling Operations and Cofferdams", link: "https://drive.google.com/file/d/1gjSHH7CuLIif6cg8AwA0Cy8yzpD2Nu9I/view?usp=drivesdk" }, 
+  { title: "CSM II-13 Explosive Materials", link: "https://drive.google.com/file/d/14aSXwDr8GjK-1TBILalrIV53IXb1Z4lz/view?usp=drivesdk" },
+  { title: "CSM II-14 Demolition", link: "https://drive.google.com/file/d/1m0Pk7RfNxftN81DMHIfo2Fu7p8bJu6KP/view?usp=drivesdk" },
+  { title: "CSM II-15 Rope Access", link: "https://drive.google.com/file/d/1_C0l2UquZ4Nih_-WmWunQnXpDGAgrDKj/view?usp=drivesdk" },
+  { title: "CSM III-1 Machine Guarding ", link: "https://drive.google.com/file/d/1kg9gsGgA6MVs7M515vAe5CEkDRiGm3I4/view?usp=drivesdk" }, 
+  { title: "CSM III-2 Mechanical and Heavy Equipment", link: "https://drive.google.com/file/d/1W06lWO34CDskrHm5sfgGnbIuw6gBxnaY/view?usp=drivesdk" },
+  { title: "CSM III-3 Electrical Equipment", link: "https://drive.google.com/file/d/1d2_KTb8KaKc7nZh24ZB-5MdBtWOY1ooE/view?usp=drivesdk" },
+  { title: "CSM III-4 Pressure Testing", link: "https://drive.google.com/file/d/1MbAdlctVQuZK_WtaPjCPHY0M-BaBrh3r/view?usp=drivesdk" },
+  { title: "CSM III-5 Ionizing Radiation", link: "https://drive.google.com/file/d/1j7wdxEhmf3-fjcbwB30cYmSWLs6TOBe6/view?usp=drivesdk" }, 
+  { title: "CSM III-6 Non-Destructive Testing (NDT)", link: "https://drive.google.com/file/d/1bTf8WAI1ygyr9Cfvnwif33oEe1yWDE30/view?usp=drivesdk" },
+  { title: "CSM III-7 Cranes and Lifting Equipment ", link: "https://drive.google.com/file/d/1jIqqCzc631vyFkDfsi5UYacax6tMFbsm/view?usp=drivesdk" },
+  { title: "CSM III-8 Slings and Rigging Hardware", link: "https://drive.google.com/file/d/1WioaM8T9Do9KgzccJ0nXpUKkuWCfg9lR/view?usp=drivesdk" },
+  { title: "CSM III-9 High Pressure Water Jetting", link: "https://drive.google.com/file/d/1zfqzW7SF_OROG6BZr2eUWCIcFjH-1pGq/view?usp=drivesdk" }, 
+  { title: "CSM IV-1 Diving Operations", link: "https://drive.google.com/file/d/1duFN7U1Kv-i5_y9KPN2FiaVE-hStJHQM/view?usp=drivesdk" },
+  { title: "CSM IV-4 Aviation", link: "https://drive.google.com/file/d/1ZyOCVN7E4Rmf1k4DvJ4YkbdEO95XKxtQ/view?usp=drivesdk" },
+  { title: "CSM X- Glossary of Terms", link: "https://drive.google.com/file/d/1LYNw-1mxakpk2a4-WGjKXM6w7nGMXm5K/view?usp=drivesdk" }, 
+  { title: "CSM - WSSM Table of Contents ", link: "https://drive.google.com/file/d/14-WcTxSJTqawcvN7D0nmh0McBmqoy1W4/view?usp=drivesdk" },
+  { title: "Full CSM Book", link: "https://drive.google.com/file/d/1JS1VQKXLHdOOFXpYcpRftM-kviBv-TYd/view?usp=drivesdk" }
+];
+// ---- Library cards (JSA & TBT) ----
 
   // Build one expandable "news-style" card for a library document
   function createLibraryDocCard(item, type) {
@@ -780,6 +833,88 @@ function setupJsaLibrary() {
     });
   }
 }
+
+// CSM library: search + cards
+function setupCsmLibrary() {
+  const list = Array.isArray(window.csmData) ? window.csmData : [];
+  const container = $('#csmLibraryList');
+  const search = $('#csmSearch');
+  if (!container) return;
+
+  function render(filter) {
+    const q = (filter || '').toLowerCase();
+    const filtered = list.filter(item =>
+      !q || (item.title && item.title.toLowerCase().includes(q))
+    );
+
+    if (!filtered.length) {
+      container.innerHTML = '<p class="text-muted">No CSM found for this search.</p>';
+      return;
+    }
+
+    container.innerHTML = filtered
+      .map(item => `
+        <div class="library-item-card">
+          <div class="library-item-header">
+            <div class="library-item-title">
+              <i class="fas fa-hard-hat"></i>
+              <span>${item.title}</span>
+            </div>
+            <i class="fas fa-chevron-down library-item-toggle"></i>
+          </div>
+          <div class="library-item-body">
+            <a href="${item.link}" target="_blank" class="library-item-open-button">
+              <i class="fas fa-external-link-alt"></i>
+              Open "${item.title}"
+            </a>
+          </div>
+        </div>
+      `)
+      .join('');
+
+    const cards = Array.from(container.querySelectorAll('.library-item-card'));
+
+    cards.forEach(card => {
+      const headerEl = card.querySelector('.library-item-header');
+      const bodyEl = card.querySelector('.library-item-body');
+      const toggleIcon = card.querySelector('.library-item-toggle');
+      if (!headerEl || !bodyEl) return;
+
+      bodyEl.style.display = 'none';
+
+      headerEl.addEventListener('click', () => {
+        const isOpen = bodyEl.style.display == 'block';
+
+        // close all CSM cards first
+        cards.forEach(c => {
+          const b = c.querySelector('.library-item-body');
+          const i = c.querySelector('.library-item-toggle');
+          if (b) b.style.display = 'none';
+          if (i) i.classList.remove('rotated');
+        });
+
+        if (!isOpen) {
+          bodyEl.style.display = 'block';
+          if (toggleIcon) toggleIcon.classList.add('rotated');
+        }
+      });
+    });
+  }
+
+  if (!list.length) {
+    container.textContent = 'No CSM items found.';
+    return;
+  }
+
+  render('');
+
+  if (search) {
+    search.addEventListener('input', () => {
+      render(search.value);
+    });
+  }
+}
+
   // Switch between "menu" / JSA view / TBT view
 function setupLibrarySwitcher() {
   const chooser = $('#libraryChooser');
@@ -788,8 +923,10 @@ function setupLibrarySwitcher() {
   const titleEl = $('#libraryTitle');
   const jsaSearchWrapper = $('#libraryJsaSearchWrapper');
   const tbtSearchWrapper = $('#libraryTbtSearchWrapper');
+  const csmSearchWrapper = $('#libraryCsmSearchWrapper');
   const tbtList = $('#tbtLibraryList');
   const jsaList = $('#jsaListContainer');
+  const csmList = $('#csmLibraryList');
 
   if (!chooser || !content || !backBtn || !titleEl || !tbtList || !jsaList) return;
 
@@ -817,8 +954,18 @@ function setupLibrarySwitcher() {
       titleEl.textContent = 'Tool Box Talk Library';
       if (jsaSearchWrapper) jsaSearchWrapper.style.display = 'none';
       if (tbtSearchWrapper) tbtSearchWrapper.style.display = 'block';
+      if (csmSearchWrapper) csmSearchWrapper.style.display = 'none';
       jsaList.style.display = 'none';
       tbtList.style.display = 'block';
+      if (csmList) csmList.style.display = 'none';
+    } else if (type === 'csm') {
+      titleEl.textContent = 'Construction Safety Manual (CSM)';
+      if (jsaSearchWrapper) jsaSearchWrapper.style.display = 'none';
+      if (tbtSearchWrapper) tbtSearchWrapper.style.display = 'none';
+      if (csmSearchWrapper) csmSearchWrapper.style.display = 'block';
+      jsaList.style.display = 'none';
+      tbtList.style.display = 'none';
+      if (csmList) csmList.style.display = 'block';
     }
 
     // scroll to top of content
@@ -837,7 +984,8 @@ function setupLibrarySwitcher() {
   // Default state
   showChooser();
 }
-  // -------------------- Tools (KPI / Heat / Wind) --------------------
+  
+// -------------------- Tools (KPI / Heat / Wind) --------------------
 
   // Heat index formula: convert C to F, apply NOAA formula, back to C
   function calculateHeatIndexC(tempC, humidity) {
@@ -1851,7 +1999,7 @@ function initTasksIframe() {
   // -------------------- Init app --------------------
 
   function initApp() {
-    setupDarkMode();
+setupDarkMode();
     setupNav();
     setupAccordions();
     setupModals();
@@ -1859,7 +2007,8 @@ function initTasksIframe() {
     setupTbtOfDay();
     setupTbtLibrary();
     setupJsaLibrary();
-    setupLibrarySwitcher();   // 👈 NEW
+    setupCsmLibrary();
+setupLibrarySwitcher();   // 👈 NEW
     setupTools();
     loadEomAndLeaderboard();
     loadObservations();
@@ -2056,3 +2205,11 @@ window.jsaData = [
   { title: "Vehicle Movement inside Plant", link: "https://drive.google.com/file/d/1Swpghi0IHWvvwkuqdowJmA1nta8l9p42/view?usp=drivesdk" },
   { title: "Welding and Fabrication Activities", link: "https://drive.google.com/file/d/1C6LFChQtQm2f4Sgkk4_fwluIF-oyr5u5/view?usp=drivesdk" }
 ];
+
+document.addEventListener('click', (e)=>{
+  const t = e.target;
+  if (t && t.id === 'envEnableGeo'){
+    e.preventDefault();
+    askGeoAndLoadWeather();
+  }
+});
